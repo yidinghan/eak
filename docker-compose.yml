@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.0.0
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - 9200:9200
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.0.0
+    ports:
+      - 5601:5601
+    links:
+      - elasticsearch
+  apm-server:
+    image: docker.elastic.co/apm/apm-server:6.0.0
+    ports:
+      - 8200:8200
+    environment:
+      - "setup.kibana.host=kibana"
+      - "output.elasticsearch.hosts=elasticsearch:9200"
+      - "apm-server.host=0.0.0.0:8200"
+    links:
+      - elasticsearch
+    command: ./apm-server -e -E output.elasticsearch.hosts=elasticsearch:9200 -E apm-server.host=0.0.0.0:8200 -E setup.kibana.host=kibana
