@@ -14,27 +14,32 @@ Go to `localhost:5601`, or what your IP is
 
 Wait for kibana to be available, then you are ready to try apm
 
+# Remarks
+ - apm-server may exit before elasticsearch is ready
+   - exit status could be found by `docker-compose ps`
+   - once exit then you should restart it, like `docker-compose up -d`
+
 # Resources
-   - docker elastic: https://www.docker.elastic.co/
-   - elasticsearch
-     - image: `docker pull docker.elastic.co/elasticsearch/elasticsearch:6.0.0`
-     - docker: https://www.elastic.co/guide/en/elasticsearch/reference/6.0/docker.html
-     - vm.max_map_count: https://github.com/docker-library/elasticsearch/issues/111#issuecomment-268989731
-     ```shell
-     $ grep vm.max_map_count /etc/sysctl.conf
-     vm.max_map_count=262144
-     
-     $ sysctl -w vm.max_map_count=262144
-     ```
-   - apm-server
-     - image: `docker pull docker.elastic.co/apm/apm-server:6.0.0`
-     - docker: https://www.elastic.co/guide/en/apm/server/current/running-on-docker.html
-     - config: https://github.com/elastic/apm-server/blob/master/apm-server.reference.yml
-   - kibana
-     - image: `docker pull docker.elastic.co/kibana/kibana:6.0.0`
-     - docker: https://www.elastic.co/guide/en/kibana/6.0/docker.html
-   - apm agent
-     - nodejs: https://www.elastic.co/guide/en/apm/agent/nodejs/current/intro.html  
-   - elastic-apm-server
-     - image: `docker pull playdingnow/elastic-apm-server:v1.1`
-     - repo: https://github.com/yidinghan/elastic-apm-server
+ - docker elastic: https://www.docker.elastic.co/
+ - elasticsearch
+   - image: `docker pull docker.elastic.co/elasticsearch/elasticsearch:6.0.0`
+   - docker: https://www.elastic.co/guide/en/elasticsearch/reference/6.0/docker.html
+   - vm.max_map_count: https://github.com/docker-library/elasticsearch/issues/111#issuecomment-268989731
+   ```shell
+   $ grep vm.max_map_count /etc/sysctl.conf
+   vm.max_map_count=262144
+
+   $ sysctl -w vm.max_map_count=262144
+   ```
+ - apm-server
+   - image: `docker pull docker.elastic.co/apm/apm-server:6.0.0`
+   - docker: https://www.elastic.co/guide/en/apm/server/current/running-on-docker.html
+   - config: https://github.com/elastic/apm-server/blob/master/apm-server.reference.yml
+ - kibana
+   - image: `docker pull docker.elastic.co/kibana/kibana:6.0.0`
+   - docker: https://www.elastic.co/guide/en/kibana/6.0/docker.html
+ - apm agent
+   - nodejs: https://www.elastic.co/guide/en/apm/agent/nodejs/current/intro.html
+ - elastic-apm-server
+   - image: `docker pull playdingnow/elastic-apm-server:v1.1`
+   - repo: https://github.com/yidinghan/elastic-apm-server
