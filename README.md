@@ -36,5 +36,5 @@ Wait for kibana to be available, then you are ready to try apm
    - apm agent
      - nodejs: https://www.elastic.co/guide/en/apm/agent/nodejs/current/intro.html  
    - elastic-apm-server
-     - image: `docker pull playdingnow/elastic-apm-server`
+     - image: `docker pull playdingnow/elastic-apm-server:v1.1`
      - repo: https://github.com/yidinghan/elastic-apm-server

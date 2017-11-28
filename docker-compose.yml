@@ -14,7 +14,7 @@ services:
     links:
       - elasticsearch
   apm-server:
-    image: playdingnow/elastic-apm-server
+    image: playdingnow/elastic-apm-server:v1.1
     ports:
       - 8200:8200
     links:
