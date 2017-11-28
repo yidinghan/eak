@@ -3,7 +3,7 @@
 elasticsearch apm-server kibana
 
 # Resources
-   - elastic docker: https://www.docker.elastic.co/
+   - docker elastic: https://www.docker.elastic.co/
    - elasticsearch
      - image: `docker pull docker.elastic.co/elasticsearch/elasticsearch:6.0.0`
      - docker: https://www.elastic.co/guide/en/elasticsearch/reference/6.0/docker.html
