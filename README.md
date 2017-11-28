@@ -21,7 +21,7 @@ elasticsearch apm-server kibana
    - kibana
      - image: `docker pull docker.elastic.co/kibana/kibana:6.0.0`
      - docker: https://www.elastic.co/guide/en/kibana/6.0/docker.html
-   - apm gaent
+   - apm agent
      - nodejs: https://www.elastic.co/guide/en/apm/agent/nodejs/current/intro.html  
    
      
