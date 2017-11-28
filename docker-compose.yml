@@ -14,9 +14,8 @@ services:
     links:
       - elasticsearch
   apm-server:
-    build: ./apm-server
+    image: playdingnow/elastic-apm-server
     ports:
       - 8200:8200
     links:
       - elasticsearch
-    # command: ./apm-server -e -E output.elasticsearch.hosts=elasticsearch:9200 -E apm-server.host=0.0.0.0:8200 -E setup.kibana.host=kibana
