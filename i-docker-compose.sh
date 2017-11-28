@@ -5,4 +5,6 @@ chmod +x /usr/local/bin/docker-compose
 rcfile='/root/.bashrc'
 echo 'alias d=docker' >> $rcfile
 echo 'alias dc=docker-compose' >> $rcfile
-source $rcfile
+
+echo "run cmd to use alias of d=docker and dc=docker-compose"
+echo "        source \"${rcfile}\""
