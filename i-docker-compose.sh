@@ -3,6 +3,6 @@ chmod +x /usr/local/bin/docker-compose
 
 
 rcfile='/root/.bashrc'
-echo 'alias d=docker\n' >> $rcfile
-echo 'alias dc=docker-compose\n' >> $rcfile
+echo 'alias d=docker' >> $rcfile
+echo 'alias dc=docker-compose' >> $rcfile
 source $rcfile
