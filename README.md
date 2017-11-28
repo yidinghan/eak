@@ -2,6 +2,26 @@
 
 elasticsearch apm-server kibana
 
+# Quick Run
+
+```sh
+git pull https://github.com/yidinghan/eak.git
+cd eak
+docker-compose up -d
+```
+
+go to localhost, or whatever your IP is, with port 5601
+
+wait for kibana is avaliable, then setup apm-server kibana dashboard
+
+```sh
+$ docker-compose exec apm-server ./apm-server setup
+Loaded index template
+Loaded dashboards
+```
+
+then your ready to go
+
 # Resources
    - docker elastic: https://www.docker.elastic.co/
    - elasticsearch
