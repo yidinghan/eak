@@ -10,17 +10,9 @@ cd eak
 docker-compose up -d
 ```
 
-go to localhost, or whatever your IP is, with port 5601
+Go to `localhost:5601`, or what your IP is
 
-wait for kibana is avaliable, then setup apm-server kibana dashboard
-
-```sh
-$ docker-compose exec apm-server ./apm-server setup
-Loaded index template
-Loaded dashboards
-```
-
-then your ready to go
+Wait for kibana to be available, then you are ready to try apm
 
 # Resources
    - docker elastic: https://www.docker.elastic.co/
