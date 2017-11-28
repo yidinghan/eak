@@ -2,7 +2,7 @@ curl -L https://github.com/docker/compose/releases/download/1.17.1/docker-compos
 chmod +x /usr/local/bin/docker-compose
 
 
-rcfile='~/.bashrc'
+rcfile='/root/.bashrc'
 echo 'alias d=docker\n' >> $rcfile
 echo 'alias dc=docker-compose\n' >> $rcfile
 source $rcfile
