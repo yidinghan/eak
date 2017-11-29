@@ -24,7 +24,7 @@ services:
     depends_on:
       elasticsearch: { condition: service_healthy }
   apm-server:
-    image: playdingnow/elastic-apm-server:v1.1
+    image: playdingnow/elastic-apm-server:v1.2
     ports:
       - 8200:8200
     depends_on:
