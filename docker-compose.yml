@@ -1,4 +1,4 @@
-version: '2'
+version: '2.2'
 
 services:
   elasticsearch:
@@ -7,15 +7,30 @@ services:
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     ports:
       - 9200:9200
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9200"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
   kibana:
     image: docker.elastic.co/kibana/kibana:6.0.0
     ports:
       - 5601:5601
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5601"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
     links:
       - elasticsearch
+    depends_on:
+      elasticsearch: { condition: service_healthy }
   apm-server:
     image: playdingnow/elastic-apm-server:v1.1
     ports:
       - 8200:8200
     links:
       - elasticsearch
+    depends_on:
+      elasticsearch: { condition: service_healthy }
+      kibana: { condition: service_healthy }
