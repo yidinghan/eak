@@ -15,6 +15,10 @@ Go to `localhost:5601`, or what your IP is
 Wait for kibana to be available, then you are ready to try apm
 
 # Remarks
+ - with compose 2.2 feature, [healthcheck](https://docs.docker.com/compose/compose-file/compose-file-v2/#healthcheck)
+   - your may need to wait a while in the `up` stage
+   - because kibana depends on es
+   - apm-server depends on es and kibana
  - apm-server may exit before elasticsearch is ready
    - exit status could be found by `docker-compose ps`
    - once exit then you should restart it, like `docker-compose up -d`
