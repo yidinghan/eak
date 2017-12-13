@@ -38,7 +38,7 @@ Wait for kibana to be available, then you are ready to try apm
    $ sysctl -w vm.max_map_count=262144
    ```
  - apm-server
-   - image: `docker pull docker.elastic.co/apm/apm-server:6.0.0`
+   - image: `docker pull docker.elastic.co/apm/apm-server:6.0.1`
    - docker: https://www.elastic.co/guide/en/apm/server/current/running-on-docker.html
    - config: https://github.com/elastic/apm-server/blob/master/apm-server.reference.yml
  - kibana
@@ -47,6 +47,6 @@ Wait for kibana to be available, then you are ready to try apm
  - apm agent
    - nodejs: https://www.elastic.co/guide/en/apm/agent/nodejs/current/intro.html
      - agent api: https://www.elastic.co/guide/en/apm/agent/nodejs/current/agent-api.html
- - elastic-apm-server
-   - image: `docker pull playdingnow/elastic-apm-server:v1.2`
+ - customized-apm-server
+   - image: `docker pull playdingnow/elastic-apm-server:v1.3.1`
    - repo: https://github.com/yidinghan/elastic-apm-server
