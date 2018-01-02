@@ -22,5 +22,7 @@ do
   if [ $diff -gt -1 ]
   then
     echo "delete:" $index
+    curl -XDELETE "${host}:9200/${index}"
+    echo "\n"
   fi
 done
