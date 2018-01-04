@@ -29,6 +29,7 @@ Wait for kibana to be available, then you are ready to try apm
  - docker elastic: https://www.docker.elastic.co/
  - elasticsearch
    - image: `docker pull docker.elastic.co/elasticsearch/elasticsearch:6.0.0`
+   - github: https://github.com/elastic/elasticsearch
    - docker: https://www.elastic.co/guide/en/elasticsearch/reference/6.0/docker.html
    - vm.max_map_count: https://github.com/docker-library/elasticsearch/issues/111#issuecomment-268989731
    ```shell
@@ -39,14 +40,17 @@ Wait for kibana to be available, then you are ready to try apm
    ```
  - apm-server
    - image: `docker pull docker.elastic.co/apm/apm-server:6.0.1`
+   - github: https://github.com/elastic/apm-server
    - docker: https://www.elastic.co/guide/en/apm/server/current/running-on-docker.html
    - config: https://github.com/elastic/apm-server/blob/master/apm-server.reference.yml
  - kibana
    - image: `docker pull docker.elastic.co/kibana/kibana:6.0.0`
+   - github: https://github.com/elastic/kibana
    - docker: https://www.elastic.co/guide/en/kibana/6.0/docker.html
  - apm agent
    - nodejs: https://www.elastic.co/guide/en/apm/agent/nodejs/current/intro.html
      - agent api: https://www.elastic.co/guide/en/apm/agent/nodejs/current/agent-api.html
+     - github: https://github.com/elastic/apm-agent-nodejs
  - customized-apm-server
    - image: `docker pull playdingnow/elastic-apm-server:v1.3.1`
-   - repo: https://github.com/yidinghan/elastic-apm-server
+   - github: https://github.com/yidinghan/elastic-apm-server
