@@ -16,7 +16,7 @@ Wait for kibana to be available, then you are ready to try apm
 
 # Remarks
  - with [playdingnow/elastic-apm-server:v1.4.3](https://github.com/yidinghan/elastic-apm-server/tree/1.4.3)
-   - The default `apm-dashboards.json` have been changed to customize data
+   - The default `apm-dashboards.json` have been changed to customize [data](https://github.com/yidinghan/elastic-apm-server/blob/master/apm-dashboards.json)
    - One more `visualization` chart name is `waterline`
 
    ![](http://om4h4iqhe.bkt.clouddn.com/apm-waterline.jpg)
