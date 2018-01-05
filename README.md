@@ -16,8 +16,7 @@ elasticsearch apm-server kibana
 # Quick Run
 
 ```sh
-git pull https://github.com/yidinghan/eak.git
-cd eak
+wget https://raw.githubusercontent.com/yidinghan/eak/master/docker-compose.yml
 docker-compose up -d
 ```
 
