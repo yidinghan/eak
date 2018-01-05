@@ -26,7 +26,7 @@ Go to `localhost:5601`, or what your IP is
 Wait for kibana to be available, then you are ready to try apm
 
 # Remarks
- - with [playdingnow/elastic-apm-server:v1.4.3](https://github.com/yidinghan/elastic-apm-server/tree/1.4.3)
+ - with [playdingnow/elastic-apm-server:1.4.3](https://github.com/yidinghan/elastic-apm-server/tree/1.4.3)
    - The default `apm-dashboards.json` have been changed to customize [data](https://github.com/yidinghan/elastic-apm-server/blob/master/apm-dashboards.json)
    - One more `visualization` chart name is [Waterline](#waterline)
 
