@@ -1,5 +1,16 @@
 # EAK
 
+<!-- TOC -->
+
+- [EAK](#eak)
+- [Quick Run](#quick-run)
+- [Remarks](#remarks)
+- [Resources](#resources)
+- [Waterline](#waterline)
+  - [Example](#example)
+
+<!-- /TOC -->
+
 elasticsearch apm-server kibana
 
 # Quick Run
@@ -17,7 +28,7 @@ Wait for kibana to be available, then you are ready to try apm
 # Remarks
  - with [playdingnow/elastic-apm-server:v1.4.3](https://github.com/yidinghan/elastic-apm-server/tree/1.4.3)
    - The default `apm-dashboards.json` have been changed to customize [data](https://github.com/yidinghan/elastic-apm-server/blob/master/apm-dashboards.json)
-   - One more `visualization` chart name is `waterline`
+   - One more `visualization` chart name is [Waterline](#waterline)
 
    ![](http://om4h4iqhe.bkt.clouddn.com/apm-waterline.jpg)
 
@@ -60,3 +71,39 @@ Wait for kibana to be available, then you are ready to try apm
  - customized-apm-server
    - image: `docker pull playdingnow/elastic-apm-server:1.4.3`
    - github: https://github.com/yidinghan/elastic-apm-server
+
+# Waterline
+
+The higher the waterline, the higher the service load, formula is as follows
+
+```js
+waterline = sum([waterline_0, waterline_1, ..., waterline_n]) / count(duration)
+
+waterline_x = count(duration, [border_x_start, border_x_end]) * a_x
+```
+
+Where
+
+- duration is `transaction.duration.us`
+- border_x is interval border, like [0, 100] means from 0ms to 100ms
+- a_x is interval coefficient of border_x, like 1/2/100 or whatever you want
+
+
+## Example
+
+```js
+waterline = ( count(duration, [0, 200]) * 1 + count(duration, [200, *]) * 2 ) / count(duration)
+```
+
+In a point
+
+```js
+10 = count(duration, [0, 200])
+1 = count(duration, [200, *])
+```
+
+Then, in 3 decimal places precision
+
+```js
+waterline = ( 10 * 1 + 1 * 2 ) / 11 = 1.091
+```
