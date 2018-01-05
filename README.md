@@ -15,6 +15,12 @@ Go to `localhost:5601`, or what your IP is
 Wait for kibana to be available, then you are ready to try apm
 
 # Remarks
+ - with [playdingnow/elastic-apm-server:v1.4.3](https://github.com/yidinghan/elastic-apm-server/tree/1.4.3)
+   - The default `apm-dashboards.json` have been changed to customize data
+   - One more `visualization` chart name is `waterline`
+
+   ![](http://om4h4iqhe.bkt.clouddn.com/apm-waterline.jpg)
+
  - with [playdingnow/elastic-apm-server:v1.2](https://github.com/yidinghan/elastic-apm-server/tree/v1.2)
    - The default secret_token have been changed from `''` to `xxVpmQB2HMzCL9PgBHVrnxjNXXw5J7bd79DFm6sjBJR5HPXDhcF8MSb3vv4bpg44`
  - with compose 2.2 feature, [healthcheck](https://docs.docker.com/compose/compose-file/compose-file-v2/#healthcheck)
@@ -52,5 +58,5 @@ Wait for kibana to be available, then you are ready to try apm
      - agent api: https://www.elastic.co/guide/en/apm/agent/nodejs/current/agent-api.html
      - github: https://github.com/elastic/apm-agent-nodejs
  - customized-apm-server
-   - image: `docker pull playdingnow/elastic-apm-server:v1.3.1`
+   - image: `docker pull playdingnow/elastic-apm-server:1.4.3`
    - github: https://github.com/yidinghan/elastic-apm-server
