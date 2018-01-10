@@ -44,7 +44,7 @@ Wait for kibana to be available, then you are ready to try apm
 # Resources
  - docker elastic: https://www.docker.elastic.co/
  - elasticsearch
-   - image: `docker pull docker.elastic.co/elasticsearch/elasticsearch:6.0.0`
+   - image: `docker pull docker.elastic.co/elasticsearch/elasticsearch:6.1.1`
    - github: https://github.com/elastic/elasticsearch
    - docker: https://www.elastic.co/guide/en/elasticsearch/reference/6.0/docker.html
    - vm.max_map_count: https://github.com/docker-library/elasticsearch/issues/111#issuecomment-268989731
@@ -55,12 +55,12 @@ Wait for kibana to be available, then you are ready to try apm
    $ sysctl -w vm.max_map_count=262144
    ```
  - apm-server
-   - image: `docker pull docker.elastic.co/apm/apm-server:6.0.1`
+   - image: `docker pull docker.elastic.co/apm/apm-server:6.1.1`
    - github: https://github.com/elastic/apm-server
    - docker: https://www.elastic.co/guide/en/apm/server/current/running-on-docker.html
    - config: https://github.com/elastic/apm-server/blob/master/apm-server.reference.yml
  - kibana
-   - image: `docker pull docker.elastic.co/kibana/kibana:6.0.0`
+   - image: `docker pull docker.elastic.co/kibana/kibana:6.1.1`
    - github: https://github.com/elastic/kibana
    - docker: https://www.elastic.co/guide/en/kibana/6.0/docker.html
  - apm agent
