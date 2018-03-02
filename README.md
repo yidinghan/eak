@@ -25,6 +25,16 @@ Go to `localhost:5601`, or what your IP is
 Wait for kibana to be available, then you are ready to try apm
 
 # Remarks
+ - with [docker.elastic.co/kibana/kibana:6.2.2](https://github.com/elastic/kibana/tree/6.2.2)
+  - New tab `APM` is ready to go
+
+   ![](http://om4h4iqhe.bkt.clouddn.com/kibana-apm-services.jpg)
+   ![](http://om4h4iqhe.bkt.clouddn.com/kibana-apm-service.jpg)
+   ![](http://om4h4iqhe.bkt.clouddn.com/kibana-apm-request.jpg)
+   ![](http://om4h4iqhe.bkt.clouddn.com/kibana-apm-pg-span.jpg)
+
+ - with [playdingnow/elastic-apm-server:1.5.0](https://github.com/yidinghan/elastic-apm-server/tree/1.5.0)
+  - drop `Waterline` from dashboard temporary
  - with [docker.elastic.co/kibana/kibana:6.1.1](https://github.com/elastic/kibana/tree/6.1.1)
   - A new tab named `APM` appears in the left sidebar
 
@@ -60,12 +70,12 @@ Wait for kibana to be available, then you are ready to try apm
    $ sysctl -w vm.max_map_count=262144
    ```
  - apm-server
-   - image: `docker pull docker.elastic.co/apm/apm-server:6.1.1`
+   - image: `docker pull docker.elastic.co/apm/apm-server:6.2.2`
    - github: https://github.com/elastic/apm-server
    - docker: https://www.elastic.co/guide/en/apm/server/current/running-on-docker.html
    - config: https://github.com/elastic/apm-server/blob/master/apm-server.reference.yml
  - kibana
-   - image: `docker pull docker.elastic.co/kibana/kibana:6.1.1`
+   - image: `docker pull docker.elastic.co/kibana/kibana:6.2.2`
    - github: https://github.com/elastic/kibana
    - docker: https://www.elastic.co/guide/en/kibana/6.0/docker.html
  - apm agent
@@ -73,7 +83,7 @@ Wait for kibana to be available, then you are ready to try apm
      - agent api: https://www.elastic.co/guide/en/apm/agent/nodejs/current/agent-api.html
      - github: https://github.com/elastic/apm-agent-nodejs
  - customized-apm-server
-   - image: `docker pull playdingnow/elastic-apm-server:1.4.3`
+   - image: `docker pull playdingnow/elastic-apm-server:1.5.0`
    - github: https://github.com/yidinghan/elastic-apm-server
 
 # Waterline
