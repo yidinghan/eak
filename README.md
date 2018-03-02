@@ -34,7 +34,14 @@ Wait for kibana to be available, then you are ready to try apm
   // to
   require('elastic-apm-node').start();
   ```
-  - start method
+  - `elastic-apm-node.js` config change
+  ```js
+  // change from
+  appName: 'apm-reseach',
+  // to
+  serviceName: 'apm-reseach',
+  ```
+
 - with [docker.elastic.co/kibana/kibana:6.2.2](https://github.com/elastic/kibana/tree/6.2.2)
   - New tab `APM` is ready to go
 

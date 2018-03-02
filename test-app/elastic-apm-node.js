@@ -1,7 +1,7 @@
 module.exports = {
     active: true,
     // Set required app name (allowed characters: a-z, A-Z, 0-9, -, _, and space)
-    appName: 'apm-reseach',
+    serviceName: 'apm-reseach',
 
     // Use if APM Server requires a token
     secretToken: 'xxVpmQB2HMzCL9PgBHVrnxjNXXw5J7bd79DFm6sjBJR5HPXDhcF8MSb3vv4bpg44',
