@@ -2,7 +2,7 @@ version: '2.2'
 
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:6.1.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.2.2
     environment:
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     ports:
@@ -13,7 +13,7 @@ services:
       timeout: 5s
       retries: 3
   kibana:
-    image: docker.elastic.co/kibana/kibana:6.1.1
+    image: docker.elastic.co/kibana/kibana:6.2.2
     ports:
       - 5601:5601
     healthcheck:
@@ -24,7 +24,7 @@ services:
     depends_on:
       elasticsearch: { condition: service_healthy }
   apm-server:
-    image: playdingnow/elastic-apm-server:1.4.3
+    image: playdingnow/elastic-apm-server:1.5.0
     ports:
       - 8200:8200
     depends_on:
