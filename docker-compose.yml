@@ -1,6 +1,12 @@
 version: '2.2'
 
 services:
+  delete-indexes:
+    image: playdingnow/delete-outdated-es-indexes:1.2
+    environment:
+      - eshost=elasticsearch
+      - esport=9200
+      - esmaxdays=15
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.2.2
     environment:
