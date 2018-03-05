@@ -2,7 +2,7 @@ version: '2.2'
 
 services:
   delete-indexes:
-    image: playdingnow/delete-outdated-es-indexes:1.2
+    image: playdingnow/delete-outdated-es-indexes:1.3
     environment:
       - eshost=elasticsearch
       - esport=9200
