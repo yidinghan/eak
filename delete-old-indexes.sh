@@ -1,8 +1,11 @@
 host=${eshost:-localhost}
+port=${esport:-9200}
 days=${esmaxdays:-15}
 prefix=${esindexprefix:-apm}
 
-indexes=$(curl "${host}:9200/_cat/indices?v&h=index" | grep "^${prefix}" | sort)
+urlprefix=${host}:${port}
+
+indexes=$(curl "${urlprefix}/_cat/indices?v&h=index" | grep "^${prefix}" | sort)
 now=$(date "+%s")
 echo "indexes": $indexes
 echo "now": $now
@@ -15,7 +18,7 @@ do
   if [ $diff -gt -1 ]
   then
     echo "delete:" $index
-    curl -XDELETE "${host}:9200/${index}"
+    curl -XDELETE "${urlprefix}/${index}"
     echo "\n"
   fi
 done
