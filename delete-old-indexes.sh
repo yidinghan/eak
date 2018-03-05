@@ -1,5 +1,5 @@
-host=${host:-localhost}
-days=${days:-15}
+host=${eshost:-localhost}
+days=${esmaxdays:-15}
 
 datediff() {
   d1=$(date -d "$1" +%s)
