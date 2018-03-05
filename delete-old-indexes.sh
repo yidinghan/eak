@@ -1,15 +1,8 @@
 host=${eshost:-localhost}
 days=${esmaxdays:-15}
+prefix=${esindexprefix:-apm}
 
-datediff() {
-  d1=$(date -d "$1" +%s)
-  d2=$(date -d "$2" +%s)
-  echo "d1:" $d1
-  echo "d2:" $d2
-  return $(((d1 - d2) / 86400))
-}
-
-indexes=$(curl "${host}:9200/_cat/indices?v&h=index" | grep apm | sort)
+indexes=$(curl "${host}:9200/_cat/indices?v&h=index" | grep "^${prefix}" | sort)
 now=$(date "+%s")
 echo "indexes": $indexes
 echo "now": $now
