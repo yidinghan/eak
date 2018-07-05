@@ -8,9 +8,9 @@ services:
       - esport=9200
       - esmaxdays=15
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:6.2.2
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.3.0
     environment:
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - ES_JAVA_OPTS="-Xms512m -Xmx512m"
     ports:
       - 9200:9200
     healthcheck:
@@ -19,7 +19,7 @@ services:
       timeout: 5s
       retries: 3
   kibana:
-    image: docker.elastic.co/kibana/kibana:6.2.2
+    image: docker.elastic.co/kibana/kibana:6.3.0
     ports:
       - 5601:5601
     healthcheck:
@@ -30,7 +30,7 @@ services:
     depends_on:
       elasticsearch: { condition: service_healthy }
   apm-server:
-    image: playdingnow/elastic-apm-server:1.5.1
+    image: playdingnow/elastic-apm-server:1.6.0
     ports:
       - 8200:8200
     depends_on:
