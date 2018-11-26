@@ -40,7 +40,6 @@ services:
       - apm-server.host="0.0.0.0:8200"
       - apm-server.secret_token="xxVpmQB2HMzCL9PgBHVrnxjNXXw5J7bd79DFm6sjBJR5HPXDhcF8MSb3vv4bpg44"
       - setup.kibana.host="kibana:5601"
-      - setup.dashboards.enabled=true
       - setup.template.enabled=true
       - logging.to_files=false
     depends_on:

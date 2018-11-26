@@ -1,7 +1,7 @@
 require('elastic-apm-node').start({
-    appName: 'test-app',
+    serviceName: 'test-app',
     serverUrl: `http://${process.env.apmserver}:8200`,
-    logLevel: 'debug'
+    logLevel: 'info',
 });
 const http = require('http');
 
