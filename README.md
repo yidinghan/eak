@@ -24,6 +24,7 @@ Wait for kibana to be available, then you are ready to try apm
 
 - Since v6.4, apm dashboard setup move to Kibana UI.
 
+  ![](https://github.com/yidinghan/eak/raw/master/images/apm-setup-instructions.jpg)
   ![](https://github.com/yidinghan/eak/raw/master/images/load-kibana-objects.jpg)
 
 - with [apm-agent-nodejs:v1.1.0](https://github.com/elastic/apm-agent-nodejs/tree/v1.1.0)
