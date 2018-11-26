@@ -14,7 +14,7 @@ services:
     ports:
       - 9200:9200
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9200"]
+      test: ['CMD', 'curl', '-f', 'http://localhost:9200']
       interval: 10s
       timeout: 5s
       retries: 3
@@ -23,16 +23,27 @@ services:
     ports:
       - 5601:5601
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5601"]
+      test: ['CMD', 'curl', '-f', 'http://localhost:5601']
       interval: 10s
       timeout: 5s
       retries: 3
     depends_on:
-      elasticsearch: { condition: service_healthy }
+      elasticsearch:
+        condition: service_healthy
   apm-server:
-    image: playdingnow/elastic-apm-server:1.6.0
+    image: docker.elastic.co/apm/apm-server:6.4.3
     ports:
       - 8200:8200
+    environment:
+      - output.elasticsearch.hosts=['http://elasticsearch:9200']
+      - apm-server.host="0.0.0.0:8200"
+      - apm-server.secret_token="xxVpmQB2HMzCL9PgBHVrnxjNXXw5J7bd79DFm6sjBJR5HPXDhcF8MSb3vv4bpg44"
+      - setup.kibana.host="kibana:5601"
+      - setup.dashboards.enabled=true
+      - setup.template.enabled=true
+      - logging.to_files=false
     depends_on:
-      elasticsearch: { condition: service_healthy }
-      kibana: { condition: service_healthy }
+      elasticsearch:
+        condition: service_healthy
+      kibana:
+        condition: service_healthy
