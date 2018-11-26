@@ -1,15 +1,11 @@
 # EAK
 
-<!-- TOC -->
-
 - [EAK](#eak)
 - [Quick Run](#quick-run)
 - [Remarks](#remarks)
 - [Resources](#resources)
 - [Waterline](#waterline)
   - [Example](#example)
-
-<!-- /TOC -->
 
 elasticsearch apm-server kibana
 
@@ -20,11 +16,15 @@ wget https://raw.githubusercontent.com/yidinghan/eak/master/docker-compose.yml
 docker-compose up -d
 ```
 
-Go to `localhost:5601`, or what your IP is
+Go to `localhost:5601`, or what your machine IP
 
 Wait for kibana to be available, then you are ready to try apm
 
 # Remarks
+
+- Since v6.4, apm dashboard setup move to Kibana UI.
+
+  ![](https://github.com/yidinghan/eak/raw/master/images/load-kibana-objects.jpg)
 
 - with [apm-agent-nodejs:v1.1.0](https://github.com/elastic/apm-agent-nodejs/tree/v1.1.0)
 
@@ -85,7 +85,7 @@ Wait for kibana to be available, then you are ready to try apm
 - docker elastic: https://www.docker.elastic.co/
 - elasticsearch
 
-  - image: `docker pull docker.elastic.co/elasticsearch/elasticsearch:6.3.0`
+  - image: `docker pull docker.elastic.co/elasticsearch/elasticsearch:6.5.1`
   - github: https://github.com/elastic/elasticsearch
   - docker: https://www.elastic.co/guide/en/elasticsearch/reference/6.0/docker.html
   - vm.max_map_count: https://github.com/docker-library/elasticsearch/issues/111#issuecomment-268989731
@@ -98,21 +98,18 @@ Wait for kibana to be available, then you are ready to try apm
   ```
 
 - apm-server
-  - image: `docker pull docker.elastic.co/apm/apm-server:6.3.0`
+  - image: `docker pull docker.elastic.co/apm/apm-server:6.5.1`
   - github: https://github.com/elastic/apm-server
   - docker: https://www.elastic.co/guide/en/apm/server/current/running-on-docker.html
   - config: https://github.com/elastic/apm-server/blob/master/apm-server.reference.yml
 - kibana
-  - image: `docker pull docker.elastic.co/kibana/kibana:6.3.0`
+  - image: `docker pull docker.elastic.co/kibana/kibana:6.5.1`
   - github: https://github.com/elastic/kibana
   - docker: https://www.elastic.co/guide/en/kibana/6.0/docker.html
 - apm agent
   - nodejs: https://www.elastic.co/guide/en/apm/agent/nodejs/current/intro.html
     - agent api: https://www.elastic.co/guide/en/apm/agent/nodejs/current/agent-api.html
     - github: https://github.com/elastic/apm-agent-nodejs
-- customized-apm-server
-  - image: `docker pull playdingnow/elastic-apm-server:1.6.0`
-  - github: https://github.com/yidinghan/elastic-apm-server
 
 # Waterline
 
