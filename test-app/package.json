@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "elastic-apm-node": "^2.0.0"
+    "elastic-apm-node": "^3.6.1"
   }
 }
